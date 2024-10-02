@@ -1,0 +1,29 @@
+// analysis.proto
+syntax = "proto3";
+
+package analysis;
+
+option go_package = "./analysis/analysis";
+
+service AnalysisService {
+  rpc AnalyzeData (MarketDataRequest) returns (AnalysisResponse) {}
+}
+
+// Request structure
+message MarketDataRequest {
+  repeated MarketData data = 1;
+}
+
+// Market data structure
+message MarketData {
+  string time = 1;
+  string symbol = 2;
+  double price = 3;
+  int64 volume = 4;
+}
+
+// Response structure
+message AnalysisResponse {
+  repeated double predictions = 1;
+  repeated double moving_averages = 2;
+}
