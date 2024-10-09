@@ -6,7 +6,7 @@ import (
 	"time"
 	"context"
 
-	pb "github.com/josefmay/grah2.0/analysis/analysis.pb"
+	pb "github.com/josefmay/grah2.0/go/internal/genproto/analysis"
 )
 
 func handleOptimize(w http.ResponseWriter, r *http.Request){
